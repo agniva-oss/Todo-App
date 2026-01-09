@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS public.todos;
+DROP EXTENSION IF EXISTS "pgcrypto";
