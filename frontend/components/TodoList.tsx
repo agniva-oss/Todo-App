@@ -49,11 +49,10 @@ export default function TodoList() {
 
   return (
     <>
-      {/* Progress */}
       <div className="mb-5 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl">
-        <div className="flex justify-between text-sm font-semibold mb-2">
-          <span>{completedCount} / {totalCount} completed</span>
-          <span>{Math.round(progress)}%</span>
+        <div className="flex items-center justify-between text-sm font-semibold mb-2 gap-2 w-full">
+          <span className="text-gray-700 truncate">{completedCount} / {totalCount} completed</span>
+          <span className="text-gray-700 flex-shrink-0">{Math.round(progress)}%</span>
         </div>
         <div className="w-full h-2 bg-gray-200 rounded-full">
           <div
@@ -63,7 +62,6 @@ export default function TodoList() {
         </div>
       </div>
 
-      {/* Todos */}
       <div className="space-y-3">
         {data.todos.map((todo, index) => (
           <div

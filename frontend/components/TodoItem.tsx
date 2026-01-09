@@ -47,8 +47,6 @@ export default function TodoItem({ id, title, completed, updated_at }: Props) {
     setIsLoading(true);
     const now = new Date().toISOString();
 
-    // First update the timestamp on the row so updated_at is set,
-    // then delete the row.
     updateTodo({ variables: { id, completed, updated_at: now } })
       .then(() => deleteTodo({ variables: { id } }))
       .then(() => setIsLoading(false))
@@ -93,7 +91,7 @@ export default function TodoItem({ id, title, completed, updated_at }: Props) {
       <button
         onClick={handleDeleteTodo}
         disabled={isLoading}
-        className="opacity-0 group-hover:opacity-100 text-red-500 hover:bg-red-50 p-2 rounded-lg transition disabled:opacity-50"
+        className="opacity-100 sm:opacity-0 sm:group-hover:opacity-100 text-red-500 hover:bg-red-50 p-2 rounded-lg transition disabled:opacity-50"
       >
         {isLoading ? (
           <Loader2 size={18} className="animate-spin" />
