@@ -24,7 +24,7 @@ export default function TodoForm() {
   return (
     <form onSubmit={handleSubmit} className="mb-6 flex gap-3">
       <input
-        className="flex-1 px-5 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-400 outline-none transition"
+        className="flex-1 px-5 py-3 border-2 border-gray-200 rounded-xl bg-white text-gray-700 placeholder-gray-500 placeholder:text-gray-500 focus:ring-2 focus:ring-blue-400 outline-none transition"
         placeholder="What needs to be done?"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
