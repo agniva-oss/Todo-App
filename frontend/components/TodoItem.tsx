@@ -75,34 +75,37 @@ export default function TodoItem({ id, title, completed, updated_at, created_at 
       </button>
 
       <div className="flex-1">
-        <span
-          className={`text-lg block ${
-            completed ? "line-through text-gray-400" : "text-gray-700"
-          }`}
-        >
-          {title}
-        </span>
-        <div className="mt-1 flex flex-wrap gap-3">
+        <div className="flex items-center justify-between gap-3">
+          <span
+            className={`text-lg block truncate ${
+              completed ? "line-through text-gray-400" : "text-gray-700"
+            }`}
+          >
+            {title}
+          </span>
+
+          <button
+            onClick={handleDeleteTodo}
+            disabled={isLoading}
+            className="opacity-100 sm:opacity-0 sm:group-hover:opacity-100 text-red-500 hover:bg-red-50 p-2 rounded-lg transition disabled:opacity-50"
+          >
+            {isLoading ? (
+              <Loader2 size={18} className="animate-spin" />
+            ) : (
+              <Trash2 size={18} />
+            )}
+          </button>
+        </div>
+
+        <div className="mt-2 w-full text-xs text-gray-400 flex gap-3">
           {created_at && (
-            <span className="text-xs text-gray-400">Created {formatUpdatedAt(created_at)}</span>
+            <span className="truncate">Created {formatUpdatedAt(created_at)}</span>
           )}
           {updated_at && (
-            <span className="text-xs text-gray-400">Updated {formatUpdatedAt(updated_at)}</span>
+            <span className="truncate">Updated {formatUpdatedAt(updated_at)}</span>
           )}
         </div>
       </div>
-
-      <button
-        onClick={handleDeleteTodo}
-        disabled={isLoading}
-        className="opacity-100 sm:opacity-0 sm:group-hover:opacity-100 text-red-500 hover:bg-red-50 p-2 rounded-lg transition disabled:opacity-50"
-      >
-        {isLoading ? (
-          <Loader2 size={18} className="animate-spin" />
-        ) : (
-          <Trash2 size={18} />
-        )}
-      </button>
     </div>
   );
 }
