@@ -11,6 +11,7 @@ type Props = {
   title: string;
   completed: boolean;
   updated_at?: string;
+  created_at?: string;
 };
 
 const formatUpdatedAt = (dateString: string) => {
@@ -24,7 +25,7 @@ const formatUpdatedAt = (dateString: string) => {
   return date.toLocaleDateString();
 };
 
-export default function TodoItem({ id, title, completed, updated_at }: Props) {
+export default function TodoItem({ id, title, completed, updated_at, created_at }: Props) {
   const [isLoading, setIsLoading] = useState(false);
 
   const [updateTodo] = useMutation(UPDATE_TODO, {
@@ -81,11 +82,14 @@ export default function TodoItem({ id, title, completed, updated_at }: Props) {
         >
           {title}
         </span>
-        {updated_at && (
-          <span className="text-xs text-gray-400 mt-1">
-            Updated {formatUpdatedAt(updated_at)}
-          </span>
-        )}
+        <div className="mt-1 flex flex-wrap gap-3">
+          {created_at && (
+            <span className="text-xs text-gray-400">Created {formatUpdatedAt(created_at)}</span>
+          )}
+          {updated_at && (
+            <span className="text-xs text-gray-400">Updated {formatUpdatedAt(updated_at)}</span>
+          )}
+        </div>
       </div>
 
       <button
