@@ -1,0 +1,53 @@
+# ========================
+# Node / Next.js
+# ========================
+node_modules/
+.next/
+out/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ========================
+# Environment variables
+# ========================
+.env
+.env.*
+!.env.example
+next-env.d.ts
+
+# ========================
+# Hasura
+# ========================
+hasura/.env
+hasura/.hasura/
+hasura/.tmp/
+
+# (IMPORTANT) Keep migrations & metadata
+!hasura/migrations/**
+!hasura/metadata/**
+
+# ========================
+# Tools / binaries
+# ========================
+tools/*.exe
+tools/*.bin
+
+# ========================
+# OS
+# ========================
+.DS_Store
+Thumbs.db
+
+# ========================
+# Editor
+# ========================
+.vscode/
+.idea/
+
+# ========================
+# package manager lock files
+# ========================
+package-lock.json
+yarn.lock

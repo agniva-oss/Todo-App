@@ -1,0 +1,8 @@
+- name: todo-db
+  kind: postgres
+  configuration:
+    connection_info:
+      database_url: postgresql://neondb_owner:npg_uJT5lDN9hdtG@ep-quiet-mountain-a1lnbh1a-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+      isolation_level: read-committed
+      use_prepared_statements: false
+  tables: "!include todo-db/tables/tables.yaml"
