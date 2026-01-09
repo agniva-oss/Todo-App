@@ -1,4 +1,3 @@
-$content = @"
 # Todo App - Frontend
 
 A modern, responsive todo application built with [Next.js](https://nextjs.org), [Apollo Client](https://www.apollographql.com/docs/react/), and [Tailwind CSS](https://tailwindcss.com).
