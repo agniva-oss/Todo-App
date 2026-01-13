@@ -11,10 +11,12 @@
   "dependencies": {
     "@apollo/client": "^4.0.11",
     "graphql": "^16.12.0",
+    "graphql-ws": "^6.0.6",
     "lucide-react": "^0.562.0",
     "next": "16.1.1",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "react-toastify": "^11.0.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
