@@ -9,6 +9,9 @@ type Todo = {
   id: string;
   title: string;
   completed: boolean;
+  due_date?: string;
+  created_at?: string;
+  updated_at?: string;
 };
 
 type GetTodosResponse = {

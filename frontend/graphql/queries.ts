@@ -6,6 +6,7 @@ export const GET_TODOS = gql`
       id
       title
       completed
+      due_date
       created_at
       updated_at
     }
